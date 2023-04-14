@@ -20,17 +20,17 @@ async def play_logs(message, streamtype):
         else:
             chatusername = "Private Group"
         logger_text = f"""
-**تم تشغيل القرآن**
+**Quran PLAY LOG**
 
-**اسم الجروب :** {message.chat.title} [`{message.chat.id}`]
-**اسم المشغل :** {message.from_user.mention}
-**يوزر المشغل :** @{message.from_user.username}
-**ايدي المشغل :** `{message.from_user.id}`
-**رابط الجروب :** {chatusername}
+**Chat:** {message.chat.title} [`{message.chat.id}`]
+**User:** {message.from_user.mention}
+**Username:** @{message.from_user.username}
+**User ID:** `{message.from_user.id}`
+**Chat Link:** {chatusername}
 
-**اسم الاغنيه:** {message.text}
+**Query:** {message.text}
 
-**المنصه :** {streamtype}"""
+**StreamType:** {streamtype}"""
         if message.chat.id != LOG_GROUP_ID:
             try:
                 await app.send_message(
